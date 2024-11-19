@@ -112,6 +112,38 @@
         .page-content#main {
             font-size: 20px;
         }
+        .contact-form {
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block;
+            width: fit-content;
+        }
+        .contact-form label {
+            color: white;
+            font-family: "DM Serif Display", serif;
+            font-size: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 0px;
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+            font-family: "DM Serif Display", serif;
+            font-size: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            font-family: "DM Serif Display", serif;
+            color: white;
+            background-color: rgba(57, 16, 72, 0.589);
+            border: 0px;
+            border-radius: 10px;
+            padding: 5px 20px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -136,48 +168,85 @@
         </ul>
     </nav>
     <div class="content">
+
         <div id="home" style="display: block;">
+
             <div class="page-content" id="title">
                 <h1>Explore<br>Dream<br>Destination</h1>
             </div>
+
             <div class="page-content" id="main">
                 <p>Our mission is to assist you to draw a perfect travel plan.</p>
                 <p>A few clicks makes you closer to your dream destination.</p>
             </div>
+
             <div class="page-content" id="book">
                 <button onclick="showSection('book-now')">Book Now</button>
-            </div></div>
+            </div>
+
         </div>
+
         <div id="about" style="display: none;">
+
             <div class="page-content" id="title">
                 <h1>About Us</h1>
             </div>
+
             <div class="page-content" id="main">
                 <p>TravelBloom is a travel recommendation website that helps you find the perfect destination for your next trip.</p>
             </div>
+
+
+            <div class="page-content" id="title">
+                <h1>Our Team</h1>
+            </div>
+
+            <div class="page-content" id="main">
+                <p>We are a team of experts to help you find the perfect destination for your next trip.</p>
+            </div>
+
             <div class="page-content" id="back-home">
                 <button onclick="showSection('home')">Back to Home</button>
             </div>
+
         </div>
+
         <div id="contact" style="display: none;">
+
             <div class="page-content" id="title">
                 <h1>Contact Us</h1>
             </div>
+
             <div class="page-content" id="main">
-                <p>If you have any questions or feedback, please contact us at travelbloom@gmail.com.</p>
+                <form action="/submit-contact" method="post" class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                    <button type="submit">Send</button>
+                </form>
             </div>
+
             <div class="page-content" id="back-home">
                 <button onclick="showSection('home')">Back to Home</button>
             </div>
+
         </div>
+
         <div id="book-now" style="display: none;">
+
             <div class="page-content" id="title">
                 <h1>Schedule a meeting</h1>
             </div>
+
             <div class="page-content" id="back-home">
                 <button onclick="showSection('home')">Back to Home</button>
             </div>
+
         </div>
+
     </div>
     <script src="travel_recommendation.js"></script>
 </body>
