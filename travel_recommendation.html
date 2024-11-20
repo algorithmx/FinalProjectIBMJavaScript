@@ -144,6 +144,17 @@
             padding: 5px 20px;
             font-size: 20px;
         }
+        .home-columns {
+            display: flex;
+            justify-content: space-between;
+        }        
+        .home-left-column {
+            width: 50%;
+        }
+        
+        .home-right-column {
+            width: 50%;
+        }
         .team-cards {
             display: flex;
             justify-content: flex-start;
@@ -184,6 +195,18 @@
                 height: 60vw;
                 object-fit: cover;
             }
+
+            .home-columns {
+                display: flex;
+                flex-direction: column;
+            }        
+            .home-left-column {
+                width: 100%;
+            }
+            
+            .home-right-column {
+                width: 100%;
+            }
         }
         .team-card > p {
             border: 1px solid rgb(255, 165, 92);
@@ -193,7 +216,34 @@
         .team-card > h2 {
             height: 30px;
         }
-
+        #search-results-container {
+            width: 100%;
+        }
+        #destination-card {
+            border: 1px solid white;
+            border-radius: 15px;
+            width: 100%;
+            text-align: left;
+        }
+        #destination-card img {
+            border-radius: 15px 15px 0px 0px;
+            width: 100%;
+            height: auto;
+        }
+        #destination-card h2 {
+            font-family: "DM Serif Display", serif;
+            color: white;
+            margin: 5px 0px;
+            padding: 5px;
+            font-size: 25px;
+        }
+        #destination-card p {
+            font-family: "DM Serif Display", serif;
+            color: white;
+            margin: 5px 0px;
+            padding: 5px;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -212,7 +262,7 @@
                 <form action="javascript:void(0)" method="get" class="search-form" id="search-form-nav" style="display: block;">
                     <input type="text" name="q" placeholder="Enter your destination" class="search-input">
                     <button type="submit" class="search-button">Search</button>
-                    <button type="reset" class="search-button">Reset</button>
+                    <button type="reset" class="search-button">Clear</button>
                 </form>
             </li>
         </ul>
@@ -221,17 +271,32 @@
 
         <div id="home" style="display: block;">
 
-            <div class="page-content" id="title">
-                <h1>Explore<br>Dream<br>Destination</h1>
-            </div>
 
-            <div class="page-content" id="main">
-                <p>Our mission is to assist you to draw a perfect travel plan.</p>
-                <p>A few clicks makes you closer to your dream destination.</p>
-            </div>
+            <div class="home-columns">
+                <div class="home-left-column">
+                    
+                    <div class="page-content" id="title">
+                        <h1>Explore<br>Dream<br>Destination</h1>
+                    </div>
 
-            <div class="page-content" id="book">
-                <button onclick="showSection('book-now')">Book Now</button>
+                    <div class="page-content" id="main">
+                        <p>Our mission is to assist you to draw a perfect travel plan.</p>
+                        <p>A few clicks makes you closer to your dream destination.</p>
+                    </div>
+
+                    <div class="page-content" id="book">
+                        <button onclick="showSection('book-now')">Book Now</button>
+                    </div>
+                </div>
+                <div class="home-right-column" id="search-results">
+                    <div id="search-results-container">
+                        <!-- <div id="destination-card">
+                            <img src="assets/images/sydney.jpg" alt="Sydney">
+                            <h2>Sydney</h2>
+                            <p>Sydney is a city in Australia.</p>
+                        </div> -->
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -323,11 +388,6 @@
                 <!-- TODO: Add team members here -->
             </div>
 
-            <div class="page-content" id="back-home">
-                <button onclick="showSection('home')">Back to Home</button>
-            </div>
-        </div>
-        <div id="search-results" style="display: none;">
             <div class="page-content" id="back-home">
                 <button onclick="showSection('home')">Back to Home</button>
             </div>
