@@ -209,7 +209,7 @@
             <li><a onclick="showSection('about')">About Us</a></li>
             <li><a onclick="showSection('contact')">Contact Us</a></li>
             <li>
-                <form action="/search" method="get" class="search-form" id="search-form-nav" style="display: block;">
+                <form action="javascript:void(0)" method="get" class="search-form" id="search-form-nav" style="display: block;">
                     <input type="text" name="q" placeholder="Enter your destination" class="search-input">
                     <button type="submit" class="search-button">Search</button>
                     <button type="reset" class="search-button">Reset</button>
@@ -327,7 +327,11 @@
                 <button onclick="showSection('home')">Back to Home</button>
             </div>
         </div>
-
+        <div id="search-results" style="display: none;">
+            <div class="page-content" id="back-home">
+                <button onclick="showSection('home')">Back to Home</button>
+            </div>
+        </div>
     </div>
     <script src="travel_recommendation.js"></script>
 </body>
