@@ -125,7 +125,7 @@
             font-size: 20px;
         }
         .contact-form input, .contact-form textarea {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(16, 0, 82, 0.3);
             border: 0px;
             border-radius: 5px;
             padding: 5px;
@@ -144,6 +144,56 @@
             padding: 5px 20px;
             font-size: 20px;
         }
+        .team-cards {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .team-card {
+            border: 1px solid rgb(255, 165, 92);
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+            text-align: center;
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-card:last-child {
+            width: 10%;
+        }
+        .team-card > img {
+            width: 20vw;
+            height: 20vw;
+            object-fit: cover;
+        }
+        @media (max-width: 800px) {
+            .team-cards {
+                flex-direction: column;
+                width: 100%;
+            }
+            .team-card {
+                width: 100%;
+            }
+            .team-card:last-child {
+                width: 100%;
+            }
+            .team-card > img {
+                width: 60vw;
+                height: 60vw;
+                object-fit: cover;
+            }
+        }
+        .team-card > p {
+            border: 1px solid rgb(255, 165, 92);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .team-card > h2 {
+            height: 30px;
+        }
+
     </style>
 </head>
 <body>
@@ -159,7 +209,7 @@
             <li><a onclick="showSection('about')">About Us</a></li>
             <li><a onclick="showSection('contact')">Contact Us</a></li>
             <li>
-                <form action="/search" method="get" class="search-form">
+                <form action="/search" method="get" class="search-form" id="search-form-nav" style="display: block;">
                     <input type="text" name="q" placeholder="Enter your destination" class="search-input">
                     <button type="submit" class="search-button">Search</button>
                     <button type="reset" class="search-button">Reset</button>
@@ -196,13 +246,31 @@
                 <p>TravelBloom is a travel recommendation website that helps you find the perfect destination for your next trip.</p>
             </div>
 
-
             <div class="page-content" id="title">
                 <h1>Our Team</h1>
             </div>
 
             <div class="page-content" id="main">
-                <p>We are a team of experts to help you find the perfect destination for your next trip.</p>
+                <div class="team-cards">
+                    <div class="team-card">
+                        <img src="assets/images/CEO.jpg" alt="Team Member 1">
+                        <h2>Claude le Blanc</h2>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="assets/images/CXO.jpg" alt="Team Member 2">
+                        <h2>Giovanni Bianchi</h2>
+                        <p>Customer Experience Manager</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="assets/images/CPO.jpg" alt="Team Member 3">
+                        <h2>Mia Rodriguez</h2>
+                        <p>Travel Planner</p>
+                    </div>
+                    <div class="team-card">
+                        <a onclick="showSection('team')">more team members</a>
+                    </div>
+                </div>
             </div>
 
             <div class="page-content" id="back-home">
@@ -245,6 +313,19 @@
                 <button onclick="showSection('home')">Back to Home</button>
             </div>
 
+        </div>
+
+        <div id="team" style="display: none;">
+
+            <div class="page-content" id="title">
+                <h1>Team Members</h1>
+                <h2> TODO: Add team members here </h2>
+                <!-- TODO: Add team members here -->
+            </div>
+
+            <div class="page-content" id="back-home">
+                <button onclick="showSection('home')">Back to Home</button>
+            </div>
         </div>
 
     </div>

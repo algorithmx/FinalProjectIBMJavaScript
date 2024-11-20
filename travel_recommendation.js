@@ -10,5 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.showSection = function(id) {
         hideAllSections();
         document.getElementById(id).style.display = 'block';
+        if (id === 'home') {
+            document.getElementById('search-form-nav').style.display = 'block';
+        } else {
+            document.getElementById('search-form-nav').style.display = 'none';
+        }
     }
 });
